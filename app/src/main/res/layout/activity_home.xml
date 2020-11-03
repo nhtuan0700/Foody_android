@@ -16,6 +16,7 @@
         android:background="#ed1c24"
         android:focusableInTouchMode="true">
         <LinearLayout
+            android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"
@@ -23,14 +24,16 @@
             android:paddingBottom="5dp"
             android:gravity="center_vertical">
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:src="@drawable/ic_search"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="8dp"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="13sp"
                 android:text="Tìm địa điểm, món ăn địa chỉ..."/>
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +41,7 @@
                 android:text="Đà Nẵng"
                 android:textColor="#000"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                android:textSize="13sp"
                 android:layout_marginRight="15dp"/>
         </LinearLayout>
     </LinearLayout>
@@ -48,33 +51,35 @@
         android:padding="8dp"
         android:background="#fff"
         android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="8dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/banner"/>
-        </androidx.cardview.widget.CardView>
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carousel"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:pageColor="#000"
+            app:fillColor="#EEE"
+            app:radius="3dp"
+            app:strokeColor="#000"
+            app:strokeWidth="1dp"
+            app:pageTransformInterval="500"
+            app:slideInterval="4000"/>
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
             android:rowCount="1"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="20dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal">
-                <ImageView
+                <com.makeramen.roundedimageview.RoundedImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/search"/>
+                    android:src="@drawable/search"
+                    app:riv_corner_radius="5dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -90,11 +95,12 @@
                 android:gravity="center_horizontal"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp">
-                <ImageView
+                <com.makeramen.roundedimageview.RoundedImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/delivery"/>
+                    android:src="@drawable/delivery"
+                    app:riv_corner_radius="5dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -108,11 +114,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal">
-                <ImageView
+                <com.makeramen.roundedimageview.RoundedImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/booking"/>
+                    android:src="@drawable/booking"
+                    app:riv_corner_radius="5dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -151,10 +158,10 @@
                 android:layout_height="match_parent"
                 android:text="Gần tôi"/>
         </com.google.android.material.tabs.TabLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </androidx.recyclerview.widget.RecyclerView>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.viewpager.widget.ViewPager>
     </LinearLayout>
 </LinearLayout>
