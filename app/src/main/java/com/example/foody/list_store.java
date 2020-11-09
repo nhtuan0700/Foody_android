@@ -25,18 +25,17 @@ public class list_store extends Fragment {
         View v = inflater.inflate(R.layout.list_store, container, false);
 
         lstStore = new ArrayList<>();
-        lstStore.add(new Store("MixFood",R.drawable.image1));
-        lstStore.add(new Store("MixFood",R.drawable.image1));
-        lstStore.add(new Store("MixFood",R.drawable.image1));
-        lstStore.add(new Store("MixFood",R.drawable.image1));
-        lstStore.add(new Store("MixFood",R.drawable.image1));
-        lstStore.add(new Store("MixFood",R.drawable.image1));
-
+        lstStore.add(new Store("Trà Sữa Bobapop - Nguyễn Văn Linh",R.drawable.store1,"FREESHIP. Có người mới đặt giao tận nơi"));
+        lstStore.add(new Store("Trà Sữa Bobapop - Nguyễn Văn Linh",R.drawable.store1,"FREESHIP. Có người mới đặt giao tận nơi"));
+        lstStore.add(new Store("Trà Sữa Bobapop - Nguyễn Văn Linh",R.drawable.store1,"FREESHIP. Có người mới đặt giao tận nơi"));
+        lstStore.add(new Store("Trà Sữa Bobapop - Nguyễn Văn Linh",R.drawable.store1,"FREESHIP. Có người mới đặt giao tận nơi"));
+        lstStore.add(new Store("Trà Sữa Bobapop - Nguyễn Văn Linh",R.drawable.store1,"FREESHIP. Có người mới đặt giao tận nơi"));
+        lstStore.add(new Store("Trà Sữa Bobapop - Nguyễn Văn Linh",R.drawable.store1,"FREESHIP. Có người mới đặt giao tận nơi"));
         RecyclerView rcv = (RecyclerView) v.findViewById(R.id.recyclerview);
+
         RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(getActivity(),lstStore);
         rcv.setLayoutManager(new GridLayoutManager(getActivity(),2));
         rcv.setAdapter(myAdapter);
-        rcv.setNestedScrollingEnabled(false);
         return v;
     }
 }

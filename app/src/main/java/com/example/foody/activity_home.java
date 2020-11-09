@@ -53,15 +53,19 @@ public class activity_home extends Fragment {
             }
         });
         carouselView.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-        tabLayout = v.findViewById(R.id.tabLayout);
+        tabLayout = (TabLayout) v.findViewById(R.id.tabLayout);
         viewPager = (ViewPager) v.findViewById(R.id.viewpager);
         pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+                if(tab.getPosition()==0){
+                    pageAdapter.notifyDataSetChanged();
+                }else if(tab.getPosition()==1){
+                    pageAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -74,6 +78,7 @@ public class activity_home extends Fragment {
 
             }
         });
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         return v;
     }
 }
@@ -119,7 +124,7 @@ public class activity_home extends Fragment {
 //            public void onTabSelected(TabLayout.Tab tab) {
 //                viewPager.setCurrentItem(tab.getPosition());
 //                if(tab.getPosition()==0){
-//                    Toast.makeText(activity_home.this,"aaaa",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(activity_home.this,"aaaa", Toast.LENGTH_SHORT).show();
 //                    pageAdapter.notifyDataSetChanged();
 //                }else if(tab.getPosition()==1){
 //

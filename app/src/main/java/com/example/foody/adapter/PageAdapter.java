@@ -25,7 +25,7 @@ public class PageAdapter extends FragmentStatePagerAdapter {
         switch (position) {
             case 0:
                 Log.d("tab1","asda");
-                return new tab_nodata();
+                return new list_store();
             case 1:
                 Log.d("tab1","asda");
                 return new tab_nodata();

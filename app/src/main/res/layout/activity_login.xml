@@ -8,45 +8,39 @@
     android:orientation="vertical"
     tools:context=".activity_login">
     <ImageView
-        android:id="@+id/btn_back"
+        android:background="?android:attr/selectableItemBackground"
         android:focusable="true"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_back"
-        android:layout_margin="10dp"/>
-    <TextView
+        android:clickable="true"
+        android:padding="15dp"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đăng Nhập hoặc Đăng Ký"
-        android:textColor="#fff"
-        android:textSize="17sp"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginBottom="25dp"/>
+        android:src="@drawable/ic_back"/>
     <LinearLayout
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:layout_weight="1">
         <Button
             style="@style/button_login"
             android:drawableLeft="@drawable/ic_smartphone"
             android:text="Đăng nhập với Số điện thoại"
-            app:backgroundTint="@color/green"
-            android:letterSpacing="0.05"/>
+            app:backgroundTint="#00b166"
+            android:letterSpacing="0.01"/>
         <Button
             style="@style/button_login"
             android:drawableLeft="@drawable/ic_facebook"
             android:text="Đăng nhập với Facebook"
-            app:backgroundTint="#0493EC"
+            app:backgroundTint="#4b6ea9"
             android:letterSpacing="0.05"/>
         <Button
             android:drawableLeft="@drawable/ic_google"
             android:text="Đăng nhập với Google"
             style="@style/button_login"
-            app:backgroundTint="#ED1B1B"
+            app:backgroundTint="#e76855"
             android:letterSpacing="0.05"/>
 
         <TextView
@@ -59,33 +53,35 @@
             android:textSize="15sp"/>
 
         <EditText
-            android:layout_width="346dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/body_edittext"
             android:drawableLeft="@drawable/ic_baseline_mail"
             android:drawablePadding="10dp"
-            android:paddingLeft="10dp"
+            android:padding="8dp"
             android:hint="Email"
             android:textColorHint="#DFD1D1"
-            android:textSize="16sp"
-            android:textColor="#fff"/>
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:singleLine="true"/>
 
         <EditText
-            android:layout_width="346dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:background="@drawable/body_edittextpass"
             android:drawableLeft="@drawable/ic_baseline_lock"
             android:drawablePadding="10dp"
-            android:paddingLeft="10dp"
+            android:padding="8dp"
             android:hint="Mật khẩu"
             android:inputType="textPassword"
             android:fontFamily="sans-serif"
             android:textColorHint="#DFD1D1"
-            android:textSize="16sp"
-            android:textColor="#fff"/>
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:singleLine="true"/>
 
         <Button
             android:id="@+id/btdangnhap"

@@ -15,7 +15,7 @@
     <item
         android:id="@+id/nav_nofi"
         android:title="Thông báo"
-        android:icon="@drawable/ic_nofi"/>
+        android:icon="@drawable/ic_notification"/>
     <item
         android:id="@+id/nav_profile"
         android:title="Cá nhân"
