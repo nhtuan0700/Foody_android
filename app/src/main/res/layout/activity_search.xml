@@ -89,9 +89,11 @@
             app:tabTextAppearance="@style/MyCustomTextAppearance"
             app:tabSelectedTextColor="#0287e0"
             app:tabIndicatorColor="#0287e0"
+            app:tabIndicatorHeight="3dp"
             app:tabMode="fixed"
             app:tabPaddingStart="0dp"
-            app:tabPaddingEnd="0dp">
+            app:tabPaddingEnd="0dp"
+            android:background="#efe9e9">
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab1"
                 android:layout_width="wrap_content"
@@ -108,29 +110,11 @@
                 android:layout_height="match_parent"
                 android:text="Đặt gần đây"/>
         </com.google.android.material.tabs.TabLayout>
-        <LinearLayout
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="#FFF">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:layout_marginTop="100dp"
-                android:gravity="center_horizontal">
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/shipper"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chưa có dữ liệu"
-                    android:textSize="16sp"/>
-            </LinearLayout>
-        </LinearLayout>
+            android:layout_height="wrap_content">
+
+        </androidx.viewpager.widget.ViewPager>
     </LinearLayout>
 </LinearLayout>

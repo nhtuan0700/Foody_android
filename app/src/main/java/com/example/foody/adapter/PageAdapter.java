@@ -11,27 +11,22 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.example.foody.list_store;
 import com.example.foody.tab_nodata;
 
-public class PageAdapter extends FragmentStatePagerAdapter {
+import java.util.ArrayList;
+import java.util.List;
 
+public class PageAdapter extends FragmentStatePagerAdapter {
+    List<Fragment> fragments;
     private int  numTab;
     public PageAdapter(@NonNull FragmentManager fm, int numTab) {
         super(fm);
         this.numTab = numTab;
+        this.fragments = new ArrayList<>();
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                Log.d("tab1","asda");
-                return new list_store();
-            case 1:
-                Log.d("tab1","asda");
-                return new tab_nodata();
-            default:
-                return new tab_nodata();
-        }
+        return fragments.get(position);
     }
 
     @Override
@@ -42,5 +37,8 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return numTab;
+    }
+    public void addFragment(Fragment fragment){
+        fragments.add(fragment);
     }
 }

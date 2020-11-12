@@ -52,6 +52,7 @@ public class activity_detail extends AppCompatActivity {
         MenuAdapter myAdapter1 = new MenuAdapter(activity_detail.this, lstFood);
         rcv1.setLayoutManager(new LinearLayoutManager(activity_detail.this));
         rcv1.setAdapter(myAdapter1);
+        rcv1.setNestedScrollingEnabled(false);
 
         lstStore=new ArrayList<>();
         lstStore.add(new Store("Trà Sữa Bobapop - Nguyễn Văn Linh",R.drawable.store1,"28 Nguyễn Văn Linh, Nam Dương"));
@@ -63,5 +64,6 @@ public class activity_detail extends AppCompatActivity {
         RecyclerViewAdapter myAdapter2 = new RecyclerViewAdapter(activity_detail.this,lstStore);
         rcv2.setLayoutManager(new GridLayoutManager(activity_detail.this,2));
         rcv2.setAdapter(myAdapter2);
+        rcv2.setNestedScrollingEnabled(false);
     }
 }

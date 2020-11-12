@@ -36,6 +36,7 @@ public class list_store extends Fragment {
         RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(getActivity(),lstStore);
         rcv.setLayoutManager(new GridLayoutManager(getActivity(),2));
         rcv.setAdapter(myAdapter);
+        rcv.setNestedScrollingEnabled(false);
         return v;
     }
 }

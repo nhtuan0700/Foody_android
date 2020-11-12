@@ -8,7 +8,7 @@
 
 
     <corners
-        android:radius="5dp"   >
+        android:radius="3dp"   >
     </corners>
 
 </shape>
