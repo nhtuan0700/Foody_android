@@ -3,11 +3,8 @@ package com.example.foody;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -24,12 +21,16 @@ public class activity_search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        ed_search = findViewById(R.id.ed_search);
+        addControls();
+        createTabFragment();
+    }
 
+    public void addControls() {
+        ed_search = findViewById(R.id.ed_search);
+        btn_back = (ImageView) findViewById(R.id.btn_back);
         ed_search.requestFocus();
 //        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 //        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,InputMethodManager.HIDE_IMPLICIT_ONLY);
-        btn_back = (ImageView) findViewById(R.id.btn_back);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,11 +39,13 @@ public class activity_search extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
+    public void createTabFragment() {
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         pageAdapter = new PageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
-        pageAdapter.addFragment(new tab_nodata());
+        pageAdapter.addFragment(new fragment_search_sub1());
         pageAdapter.addFragment(new tab_nodata());
         pageAdapter.addFragment(new tab_nodata());
         viewPager.setAdapter(pageAdapter);

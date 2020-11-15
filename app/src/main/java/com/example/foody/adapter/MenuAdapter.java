@@ -29,14 +29,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>{
     public MenuAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view = mInflater.inflate(R.layout.menu_item,parent,false);
+        view = mInflater.inflate(R.layout.item_food,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MenuAdapter.MyViewHolder holder, int position) {
         holder.tv_name.setText(mData.get(position).getName());
-        holder.tv_price.setText(mData.get(position).getPrice()+"");
+        holder.tv_price.setText(mData.get(position).getPrice()+"đ");
         holder.image.setImageResource(mData.get(position).getImage());
     }
 

@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class MainActivity extends AppCompatActivity {
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -18,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new activity_home()).commit();
+                    new fragment_home()).commit();
         };
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener(){
                 @Override
@@ -28,19 +30,19 @@ public class MainActivity extends AppCompatActivity {
                     Fragment selectedFragment = null;
                     switch (menuItem.getItemId()){
                         case R.id.nav_home:
-                            selectedFragment = new activity_home();
+                            selectedFragment = new fragment_home();
                             break;
                         case R.id.nav_bookmark:
-                            selectedFragment = new activity_bookmark();
+                            selectedFragment = new fragment_bookmark();
                             break;
                         case R.id.nav_invoice:
-                            selectedFragment = new activity_invoice();
+                            selectedFragment = new fragment_invoice();
                             break;
                         case R.id.nav_nofi:
-                            selectedFragment = new activity_nofi();
+                            selectedFragment = new fragment_notification();
                             break;
                         case R.id.nav_profile:
-                            selectedFragment = new activity_profile();
+                            selectedFragment = new fragment_profile();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();

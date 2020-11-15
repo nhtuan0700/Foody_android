@@ -55,7 +55,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/body_edittext"
             android:drawableLeft="@drawable/ic_baseline_mail"
@@ -70,7 +69,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
             android:background="@drawable/body_edittextpass"
             android:drawableLeft="@drawable/ic_baseline_lock"
             android:drawablePadding="10dp"

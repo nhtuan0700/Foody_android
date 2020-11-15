@@ -26,6 +26,7 @@
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"/>
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -120,7 +121,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="13.7"
+        android:layout_weight="13.8"
         android:orientation="vertical">
 
         <ScrollView
@@ -135,12 +136,14 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/trasua" />
+                    android:src="@drawable/store1" />
 
                 <TextView
+                    android:id="@+id/tv_store_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -151,8 +154,8 @@
 
                 <View
                     android:layout_width="wrap_content"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/darker_gray" />
+                    android:layout_height="1dp"
+                    android:background="#DDD" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -268,7 +271,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/button_shape"
+                            android:background="@drawable/shape_circle"
                             android:text="9.7"
                             android:textColor="#FFFFFF" />
                     </LinearLayout>
@@ -276,8 +279,8 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/darker_gray" />
+                    android:layout_height="1dp"
+                    android:background="#DDD" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -320,7 +323,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@android:color/darker_gray" />
+                    android:background="#DDD" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -335,6 +338,7 @@
                         android:orientation="vertical"
                         android:paddingHorizontal="10dp">
                         <TextView
+                            android:id="@+id/tv_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/ic_circle_location"
@@ -379,7 +383,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@android:color/darker_gray" />
+                        android:background="#DDD" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -423,7 +427,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:background="@android:color/darker_gray" />
+                    android:background="#DDD" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -437,11 +441,11 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:background="#DDD"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:background="#DDD"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -470,7 +474,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:background="#DDD"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -498,7 +502,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:background="#DDD"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -519,14 +523,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.3"
+        android:layout_weight="1.2"
         android:background="#F10A13"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_gravity="bottom">
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:src="@drawable/now"
             android:layout_marginRight="10dp"/>
         <TextView

@@ -4,11 +4,13 @@ public class Food {
     private String name;
     private int price;
     private int image;
+    private int idStore;
 
-    public Food(String name, int price, int image) {
+    public Food(String name, int price, int image, int idStore) {
         this.name = name;
         this.price = price;
         this.image = image;
+        this.idStore = idStore;
     }
 
     public String getName() {
@@ -23,6 +25,10 @@ public class Food {
         return image;
     }
 
+    public int getIdStore() {
+        return idStore;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -33,5 +39,9 @@ public class Food {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public void setIdStore(int idStore) {
+        this.idStore = idStore;
     }
 }

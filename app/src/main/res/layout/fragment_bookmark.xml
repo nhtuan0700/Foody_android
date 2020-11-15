@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".fragment_bookmark"
+    android:weightSum="15">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ed1c24"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đã lưu"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"/>
+        <ImageView
+            android:id="@+id/btn_search"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search_white"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            app:tabSelectedTextColor="#0287e0"
+            app:tabIndicatorColor="#0287e0"
+            app:tabMode="fixed"
+            app:tabPaddingStart="0dp"
+            app:tabPaddingEnd="0dp"
+            android:background="#FFF">
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tất cả"/>
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Địa điểm"/>
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Hình ảnh"/>
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bài viết"/>
+        </com.google.android.material.tabs.TabLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.viewpager.widget.ViewPager>
+    </LinearLayout>
+</LinearLayout>
