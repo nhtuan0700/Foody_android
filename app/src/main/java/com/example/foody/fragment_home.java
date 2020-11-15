@@ -29,7 +29,7 @@ public class fragment_home extends Fragment {
     CarouselView carouselView;
     private LinearLayout nav_discovey, nav_delivery, nav_booking;
     private int[] mImages = new int[]{
-            R.drawable.banner1,R.drawable.banner2,R.drawable.banner3
+            R.drawable.banner2,R.drawable.banner3,R.drawable.banner1,R.drawable.banner4
     };
     @Nullable
     @Override
@@ -44,7 +44,7 @@ public class fragment_home extends Fragment {
 
     public void addControls(View v){
         search_bar = v.findViewById(R.id.search_bar);
-        carouselView = v.findViewById(R.id.carousel);
+        carouselView = v.findViewById(R.id.carouse);
         tabLayout = v.findViewById(R.id.tabLayout);
         viewPager = v.findViewById(R.id.viewpager);
         nav_discovey = v.findViewById(R.id.discovery);

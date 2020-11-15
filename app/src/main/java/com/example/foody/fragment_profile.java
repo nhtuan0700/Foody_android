@@ -25,29 +25,33 @@ public class fragment_profile extends Fragment {
     OptionAdapter adapter;
     ArrayList<Option> options1,options2,options3;
     LinearLayout nav_login;
-    ImageView btn_search;
-    TextView tvDetail;
+    ImageView btn_search,imageView;
+    TextView tvDetail,tvUserName;
     private boolean isLogin = false;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile,container,false);
         addControl(v);
-        initUI();
         addOptionProfile();
+        initUI();
+        addEvent();
         return v;
     }
 
     public void initUI() {
         if (isLogin == true) {
             tvDetail.setVisibility(View.VISIBLE);
-
+            options3.add(new Option("Đăng xuất",R.drawable.ic_turn_off));
+            adapter.notifyDataSetChanged();
         }
     }
 
     public void addControl(View v) {
-        lv1 = (ListView) v.findViewById(R.id.list1);
-        lv2 = (ListView) v.findViewById(R.id.list2);
-        lv3 = (ListView) v.findViewById(R.id.list3);
+        lv1 = v.findViewById(R.id.list1);
+        lv2 = v.findViewById(R.id.list2);
+        lv3 = v.findViewById(R.id.list3);
+        imageView = v.findViewById(R.id.avatar);
+        tvUserName = v.findViewById(R.id.tv_user_name);
         tvDetail = v.findViewById(R.id.tv_detail);
         btn_search = v.findViewById(R.id.btn_search);
         nav_login = v.findViewById(R.id.nav_login);
@@ -78,36 +82,59 @@ public class fragment_profile extends Fragment {
         options1.add(new Option("Ứng dụng cho chủ quán",R.drawable.ic_coupon));
         adapter = new OptionAdapter(getActivity(),R.layout.option_item,options1);
         lv1.setAdapter(adapter);
-        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openLogin();
-            }
-        });
 
         options2 = new ArrayList<Option>();
         options2.add(new Option("Mời bạn bè",R.drawable.ic_add_user));
         options2.add(new Option("Góp ý",R.drawable.ic_mail));
         adapter = new OptionAdapter(getActivity(),R.layout.option_item,options2);
         lv2.setAdapter(adapter);
-        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openLogin();
-            }
-        });
 
         options3 = new ArrayList<Option>();
         options3.add(new Option("Chính sách quy định",R.drawable.ic_help));
         options3.add(new Option("Cài đặt ứng dụng",R.drawable.ic_setting_circle));
         adapter = new OptionAdapter(getActivity(),R.layout.option_item,options3);
         lv3.setAdapter(adapter);
-        lv3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openLogin();
-            }
-        });
+    }
+
+    public void addEvent() {
+        if (isLogin == false) {
+            lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    openLogin();
+                }
+            });
+            lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    openLogin();
+                }
+            });
+            lv3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    openLogin();
+                }
+            });
+        } else {
+            lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                }
+            });
+            lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                }
+            });
+            lv3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    switch (position) {
+                    }
+                }
+            });
+        }
     }
 
     public void openLogin(){

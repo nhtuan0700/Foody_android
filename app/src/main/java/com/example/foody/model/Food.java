@@ -1,5 +1,7 @@
 package com.example.foody.model;
 
+import java.util.ArrayList;
+
 public class Food {
     private String name;
     private int price;
@@ -43,5 +45,15 @@ public class Food {
 
     public void setIdStore(int idStore) {
         this.idStore = idStore;
+    }
+
+    public String getAddress() {
+        ListStore stores = new ListStore();
+        for (Store store : stores.getListStore()){
+            if(store.getId() == idStore) {
+                return store.getAddress();
+            }
+        }
+        return "";
     }
 }

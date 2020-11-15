@@ -7,22 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foody.R;
 import com.example.foody.activity_detail;
+import com.example.foody.model.Food;
 import com.example.foody.model.Store;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class RecyclerViewDelivery extends RecyclerView.Adapter<RecyclerViewDelivery.MyViewHolder> {
     private Context mContext;
-    private List<Store> mData;
+    private List<Food> mData;
     private int resource;
-    public RecyclerViewAdapter(Context mContext,int resource, List<Store> mData) {
+    public RecyclerViewDelivery(Context mContext,int resource, List<Food> mData) {
         this.resource = resource;
         this.mContext = mContext;
         this.mData = mData;
@@ -38,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewDelivery.MyViewHolder holder, int position) {
         holder.tvName.setText(mData.get(position).getName());
         holder.tvAddress.setText(mData.get(position).getAddress());
         holder.imageView.setImageResource(mData.get(position).getImage());
@@ -54,18 +54,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView imageView;
         public MyViewHolder(final View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tv_store_name);
+            tvName = itemView.findViewById(R.id.tv_name);
             imageView = itemView.findViewById(R.id.image);
             tvAddress = itemView.findViewById(R.id.tv_address);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(mContext, activity_detail.class);
-                    intent.putExtra("Object",mData.get(getAdapterPosition()));
-                    mContext.startActivity(intent);
-//                    Toast.makeText(mContext,getAdapterPosition()+"",Toast.LENGTH_SHORT).show();
-                }
-            });
         }
     }
 }

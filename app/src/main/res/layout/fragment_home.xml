@@ -61,15 +61,15 @@
                     android:background="#fff"
                     android:orientation="vertical">
                     <com.synnapps.carouselview.CarouselView
-                        android:id="@+id/carousel"
+                        android:id="@+id/carouse"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
-                        app:pageColor="#4D000000"
-                        app:fillColor="#6D000000"
+                        app:pageColor="#2F000000"
+                        app:fillColor="#48000000"
                         app:radius="4dp"
                         app:strokeColor="#4D000000"
                         app:strokeWidth="1dp"
-                        app:pageTransformInterval="500"
+                        app:pageTransformInterval="1500"
                         app:slideInterval="5000"
                         app:indicatorMarginVertical="0dp"
                         app:indicatorMarginHorizontal="10dp"/>
