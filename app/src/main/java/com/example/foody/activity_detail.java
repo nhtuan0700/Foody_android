@@ -96,6 +96,5 @@ public class activity_detail extends AppCompatActivity {
         arrStore = listStore.getListStore();
         ListFood listFood = new ListFood();
         arrFood = listFood.loadStoreFoods(listFood.getListFood(),idStore);
-        Toast.makeText(this,Integer.toString(arrFood.size()),Toast.LENGTH_SHORT).show();
     }
 }

@@ -97,8 +97,7 @@ public class fragment_home extends Fragment {
     public void createTabFragment() {
         pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount());
         pageAdapter.addFragment(new list_store());
-        pageAdapter.addFragment(new tab_nodata());
-        pageAdapter.addFragment(new tab_nodata());
+        pageAdapter.addFragment(new fragment_home_sub2());
         viewPager.setAdapter(pageAdapter);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

@@ -19,5 +19,6 @@
         android:singleLine="true"
         android:ellipsize="end"
         android:textColor="#333"
-        android:layout_marginVertical="8dp"/>
+        android:layout_marginVertical="8dp"
+        android:textSize="11sp"/>
 </LinearLayout>

@@ -1,7 +1,6 @@
 package com.example.foody.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foody.R;
-import com.example.foody.activity_detail;
-import com.example.foody.model.Store;
 
 import java.util.List;
 
@@ -31,7 +28,7 @@ public class SpecialAdapter extends RecyclerView.Adapter<SpecialAdapter.MyViewHo
     public SpecialAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view = mInflater.inflate(R.layout.special_item,parent,false);
+        view = mInflater.inflate(R.layout.item_special,parent,false);
         return new SpecialAdapter.MyViewHolder(view);
     }
 

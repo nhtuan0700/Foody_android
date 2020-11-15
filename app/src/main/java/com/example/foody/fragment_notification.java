@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import com.example.foody.adapter.PageAdapter;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.logging.Handler;
+
 public class fragment_notification extends Fragment {
     ImageView btn_search;
     private TabLayout tabLayout;
@@ -45,7 +47,7 @@ public class fragment_notification extends Fragment {
         pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount());
         pageAdapter.addFragment(new fragment_request());
         pageAdapter.addFragment(new fragment_request());
-        pageAdapter.addFragment(new tab_nodata());
+        pageAdapter.addFragment(new fragment_notifi_sub());
         viewPager.setAdapter(pageAdapter);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -65,5 +67,12 @@ public class fragment_notification extends Fragment {
             }
         });
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.postDelayed(
+                new Runnable(){
+                    @Override
+                    public void run() {
+                        tabLayout.getTabAt(2).select();
+                    }
+                }, 1);
     }
 }
