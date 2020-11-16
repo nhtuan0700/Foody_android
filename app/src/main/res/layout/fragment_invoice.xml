@@ -25,7 +25,7 @@
             app:tabMode="fixed"
             app:tabPaddingStart="0dp"
             app:tabPaddingEnd="0dp"
-            android:background="#ed1c24"
+            android:background="#D5131B"
             android:padding="5dp">
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tab1"

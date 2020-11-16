@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
             android:paddingVertical="8dp"
-            android:background="#ed1c24"
+            android:background="#D5131B"
             android:focusableInTouchMode="true">
             <LinearLayout
                 android:id="@+id/search_bar"

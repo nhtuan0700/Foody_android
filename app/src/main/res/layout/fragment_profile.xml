@@ -10,7 +10,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:background="#ed1c24"
+        android:background="#D5131B"
         android:layout_height="wrap_content"
         android:paddingVertical="10dp">
         <TextView
