@@ -74,11 +74,16 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
+                    android:id="@+id/tv_location"
                     android:paddingLeft="10dp"
                     android:textColor="@color/white"
                     android:text="202 Lý Tự Trọng, Thanh Binh, Hải Châu, Đà Nẵng"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:clickable="true"
+                    android:focusable="true">
                 </TextView>
             </LinearLayout>
         </LinearLayout>
@@ -135,38 +140,46 @@
                         <LinearLayout
                             android:id="@+id/linearlayout_horizon"
                             android:layout_width="match_parent"
-                            android:layout_height="130dp"
+                            android:layout_height="120dp"
                             android:orientation="horizontal">
-                            <ImageView
+                            <com.makeramen.roundedimageview.RoundedImageView
                                 android:src="@drawable/banner2"
                                 android:layout_width="200dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginRight="10dp"
+                                app:riv_corner_radius="3dp"
                                 android:scaleType="fitXY"/>
-                            <ImageView
+                            <com.makeramen.roundedimageview.RoundedImageView
                                 android:layout_marginLeft="5dp"
                                 android:src="@drawable/banner3"
                                 android:layout_width="200dp"
                                 android:layout_height="wrap_content"
+                                app:riv_corner_radius="3dp"
                                 android:layout_marginRight="10dp"
                                 android:scaleType="fitXY"/>
-                            <ImageView
+                            <com.makeramen.roundedimageview.RoundedImageView
                                 android:layout_marginLeft="5dp"
                                 android:src="@drawable/banner4"
                                 android:layout_width="200dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="10dp"/>
-                            <ImageView
+                                android:layout_marginRight="10dp"
+                                android:scaleType="fitXY"
+                                app:riv_corner_radius="3dp"/>
+                            <com.makeramen.roundedimageview.RoundedImageView
                                 android:layout_marginLeft="5dp"
                                 android:src="@drawable/banner5"
                                 android:layout_width="200dp"
-                                android:layout_height="wrap_content"/>
-                            <ImageView
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:scaleType="fitXY"
+                                app:riv_corner_radius="3dp"/>
+                            <com.makeramen.roundedimageview.RoundedImageView
                                 android:src="@drawable/banner1"
                                 android:layout_width="200dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginRight="10dp"
-                                android:scaleType="fitXY"/>
+                                android:scaleType="fitXY"
+                                app:riv_corner_radius="3dp"/>
                         </LinearLayout>
                     </HorizontalScrollView>
                 </LinearLayout>

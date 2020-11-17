@@ -61,6 +61,8 @@ public class activity_booking extends AppCompatActivity {
         arrSpecial.add(new Special(R.drawable.special4,"Giảm 10% tổng hóa đơn thức ăn khi đặt chỗ qua NowTable"));
         arrSpecial.add(new Special(R.drawable.special5,"Giảm 10% tổng hóa đơn thức ăn khi đặt chỗ qua TableNow"));
         arrSpecial.add(new Special(R.drawable.special6,"Giảm 10% thức ăn Alarte khi đặt chỗ qua TableNow"));
+        arrSpecial.add(new Special(R.drawable.special7,"Giảm 10% hóa đơn thức ăn khi đặt chỗ qua NowTable"));
+        arrSpecial.add(new Special(R.drawable.special8,"Giảm 10% hóa đơn thức ăn khi đặt chỗ qua NowTable"));
     }
 
     public void loadListSpecial() {

@@ -119,6 +119,24 @@
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
+                            android:src="@drawable/booking_new"/>
+                        <TextView
+                            android:gravity="center_horizontal"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Deal mới"
+                            android:textColor="#000"
+                            android:textSize="13sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:padding="10dp">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
                             android:src="@drawable/booking_birth"/>
                         <TextView
                             android:gravity="center_horizontal"
@@ -201,23 +219,23 @@
                             android:textSize="13sp"/>
                     </LinearLayout>
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp">
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/booking_sushi"/>
+                    <TextView
                         android:gravity="center_horizontal"
-                        android:padding="10dp">
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:src="@drawable/booking_sushi"/>
-                        <TextView
-                            android:gravity="center_horizontal"
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:text="Sushi"
-                            android:textColor="#000"
-                            android:textSize="13sp"/>
-                    </LinearLayout>
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:text="Sushi"
+                        android:textColor="#000"
+                        android:textSize="13sp"/>
+                </LinearLayout>
 
                 </LinearLayout>
             </HorizontalScrollView>
@@ -228,13 +246,28 @@
                 android:background="#FFF"
                 android:layout_marginTop="8dp"
                 android:paddingHorizontal="8dp">
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ưu đãi đặt biệt"
-                    android:textColor="#000"
-                    android:textSize="14sp"
-                    android:layout_marginVertical="8dp"/>
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ưu đãi đặt biệt"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:layout_marginVertical="8dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:gravity="right"
+                        android:text="Xem thêm"
+                        android:textColor="@color/black"
+                        android:drawableRight="@drawable/ic_right"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                    </TextView>
+                </LinearLayout>
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/list_special"
                     android:layout_width="match_parent"

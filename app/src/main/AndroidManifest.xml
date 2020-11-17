@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_welcome">
+        <activity android:name=".activity_welcome"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_delivery" />
-        <activity android:name=".activity_booking" />
-        <activity android:name=".activity_discovery" />
+        <activity android:name=".activity_delivery"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity_booking"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity_discovery"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_detail"
             android:screenOrientation="portrait" />
