@@ -21,12 +21,14 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".MainActivity.activity_welcome"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
         <activity
             android:name=".Delivery.activity_delivery"
             android:screenOrientation="portrait" />
