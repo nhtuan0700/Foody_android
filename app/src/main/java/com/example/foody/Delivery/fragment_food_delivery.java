@@ -46,7 +46,7 @@ public class fragment_food_delivery extends Fragment {
 
     public void loadData(){
         arrFood = new ArrayList<>();
-        Query query = database.child("Food").orderByChild("ordered").limitToFirst(8);
+        Query query = database.child("Food").orderByChild("ordered").limitToLast(8);
         query.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
