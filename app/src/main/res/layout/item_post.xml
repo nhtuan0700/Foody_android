@@ -88,9 +88,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
-                android:text="FREESHIP"
+                android:text="Đặt giao hàng"
                 android:textStyle="bold"
-                android:textSize="13sp"/>
+                android:textSize="10sp"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

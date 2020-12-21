@@ -6,20 +6,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.foody.Home.tab_nodata;
 import com.example.foody.R;
+import com.example.foody.Search.activity_search;
 import com.example.foody.adapter.CollectionAdapter;
+import com.example.foody.adapter.PageAdapter;
 import com.example.foody.model.CollectionItem;
 import com.example.foody.model.Food;
 import com.example.foody.adapter.RequestLocation;
@@ -47,9 +52,12 @@ public class activity_delivery extends AppCompatActivity {
     FusedLocationProviderClient fusedLocationProviderClient;
     RecyclerView rcv1, rcv2;
     private TabLayout tabLayout;
+    private ViewPager viewPager;
+    public PageAdapter pageAdapter;
     CarouselView carouselView;
     ArrayList<Food> arrFood;
     ArrayList<CollectionItem> arrCollects;
+    LinearLayout search_bar;
     ImageView btnBack;
     private String address = "202 Lý Tự Trọng, Thanh Binh, Hải Châu, Đà Nẵng";
     private TextView tvLocation;
@@ -67,21 +75,27 @@ public class activity_delivery extends AppCompatActivity {
         addControls();
         createSlider();
         getData();
-        Handler handler=new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                setAddress(address);
-            }},5000);
+        createTabFragment();
     }
 
     public void addControls() {
+        search_bar = findViewById(R.id.search_bar);
         rcv1 = findViewById(R.id.rcv_collection);
         rcv2 = findViewById(R.id.recyclerview);
         carouselView = findViewById(R.id.carousel);
         tabLayout = findViewById(R.id.tabLayout);
         btnBack = findViewById(R.id.btn_back);
         tvLocation = findViewById(R.id.tv_location);
+        tabLayout = findViewById(R.id.tabLayout);
+        viewPager = findViewById(R.id.viewpager);
+
+        search_bar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), activity_search.class);
+                startActivity(intent);
+            }
+        });
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +116,6 @@ public class activity_delivery extends AppCompatActivity {
     }
 
     public void getData() {
-        arrFood = new ArrayList<>();
         arrCollects = new ArrayList<>();
         Query query = database.child("Collection").orderByChild("id");
         query.addChildEventListener(new ChildEventListener() {
@@ -142,6 +155,31 @@ public class activity_delivery extends AppCompatActivity {
         rcv1.setNestedScrollingEnabled(false);
     }
 
+    public void createTabFragment() {
+        pageAdapter = new PageAdapter(getSupportFragmentManager());
+        pageAdapter.addFragment(new fragment_food_delivery(), "Gần tôi");
+        pageAdapter.addFragment(new tab_nodata(), "Bán chạy");
+        pageAdapter.addFragment(new tab_nodata(), "Đánh giá");
+        pageAdapter.addFragment(new tab_nodata(), "Chạy nhanh");
+        viewPager.setAdapter(pageAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
     public void getLocation() {
         RequestLocation requestLocation = new RequestLocation();
         requestLocation.displayLocationSettingsRequest(activity_delivery.this);

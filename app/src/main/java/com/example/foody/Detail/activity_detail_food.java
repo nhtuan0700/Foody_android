@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,7 +40,7 @@ public class activity_detail_food extends AppCompatActivity {
     TextView tvTitle, tvName, tvAddress;
     ImageView imageView;
     ArrayList<Food> arrFood;
-    RecyclerView rcv;
+    ImageView btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,13 @@ public class activity_detail_food extends AppCompatActivity {
         tvName = findViewById(R.id.tv_store_name);
         tvAddress = findViewById(R.id.tv_address);
         imageView =  findViewById(R.id.image);
+        btnBack = findViewById(R.id.btn_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void loadDataStore(Store store) {

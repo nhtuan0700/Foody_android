@@ -1,6 +1,7 @@
 package com.example.foody.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foody.Notification.activity_detail_news;
 import com.example.foody.R;
 import com.example.foody.model.Notification;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -37,9 +40,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     @Override
     public void onBindViewHolder(@NonNull NotificationAdapter.MyViewHolder holder, int position) {
         holder.tvTitle.setText(mData.get(position).getTitle());
-        holder.tvContent.setText(mData.get(position).getContent());
         holder.tvTime.setText(mData.get(position).getTime());
-        holder.imageView.setImageResource(mData.get(position).getImage());
+        Picasso.get().load(mData.get(position).getImage()).into(holder.imageView);
     }
 
     @Override
@@ -53,9 +55,16 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         public MyViewHolder(final View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_title);
-            tvContent = itemView.findViewById(R.id.tv_content);
             tvTime = itemView.findViewById(R.id.tv_time);
             imageView = itemView.findViewById(R.id.image);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, activity_detail_news.class);
+                    intent.putExtra("ID",mData.get(getAdapterPosition()).getId());
+                    mContext.startActivity(intent);
+                }
+            });
         }
     }
 }

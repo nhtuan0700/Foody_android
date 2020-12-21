@@ -17,7 +17,7 @@
             android:src="@drawable/store1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:scaleType="fitXY"/>
+            android:scaleType="centerCrop"/>
         <LinearLayout
             android:layout_marginTop="10dp"
             android:paddingLeft="5dp"
@@ -68,14 +68,14 @@
                     android:layout_height="15dp">
                 </ImageView>
                 <TextView
-                    android:text="Giá ~ "
+                    android:text="Giá: "
                     android:textColor="#333"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp">
                 </TextView>
                 <TextView
-                    android:id="@+id/tv_price"
+                    android:id="@+id/tv_rangePrice"
                     android:text="24k"
                     android:textColor="#333"
                     android:layout_width="wrap_content"
@@ -83,12 +83,6 @@
                     android:gravity="start">
                 </TextView>
             </LinearLayout>
-            <TextView
-                android:id="@+id/content"
-                android:textColor="#333"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quán ăn"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,27 +1,28 @@
 package com.example.foody.model;
 
 public class Notification {
+    private int id;
     private String title;
-    private String content;
-    private int image;
+    private String description;
+    private String image;
     private String time;
 
-    public Notification(String title, String content, int image, String time) {
-        this.title = title;
-        this.content = content;
-        this.image = image;
-        this.time = time;
+    public Notification() {
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public String getContent() {
-        return content;
+    public String getDescription() {
+        return description;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -29,15 +30,19 @@ public class Notification {
         return time;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.foody.R;
 import com.example.foody.Search.activity_search;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 public class fragment_profile extends Fragment {
     RecyclerView rcv;
     ArrayList<Option> arrOption;
-    ImageView btn_search,imageView;
+    ImageView btnSearch,imageView;
     TextView tvDetail,tvUserName;
     FirebaseUser user;
     FirebaseAuth mAuth;
@@ -68,9 +69,9 @@ public class fragment_profile extends Fragment {
         rcv = v.findViewById(R.id.rcv);
         imageView = v.findViewById(R.id.avatar);
         tvDetail = v.findViewById(R.id.tv_detail);
-        btn_search = v.findViewById(R.id.btn_search);
+        btnSearch = v.findViewById(R.id.btn_search);
 
-        btn_search.setOnClickListener(new View.OnClickListener() {
+        btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_search.class);

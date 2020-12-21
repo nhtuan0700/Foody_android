@@ -31,7 +31,7 @@ public class activity_booking extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     public PageAdapter pageAdapter;
-    RecyclerView rcv1,rcv2;
+    RecyclerView rcv1;
     ArrayList<CollectionItem> arrSpecial;
     ImageView btnBack;
     @Override
@@ -45,7 +45,6 @@ public class activity_booking extends AppCompatActivity {
     }
     public void addControls() {
         rcv1 = findViewById(R.id.list_special);
-//        rcv2 = findViewById(R.id.list_post);
         btnBack = findViewById(R.id.btn_back);
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewpager);
@@ -102,8 +101,8 @@ public class activity_booking extends AppCompatActivity {
     public void createTabFragment() {
         pageAdapter = new PageAdapter(getSupportFragmentManager());
         pageAdapter.addFragment(new fragment_booking_sub1(), "Nổi bật");
-        pageAdapter.addFragment(new fragment_booking_sub1(), "Đặt nhiều");
-        pageAdapter.addFragment(new fragment_booking_sub1(), "Mới");
+        pageAdapter.addFragment(new tab_nodata(), "Đặt nhiều");
+        pageAdapter.addFragment(new tab_nodata(), "Mới");
         pageAdapter.addFragment(new tab_nodata(), "Gần tôi");
         viewPager.setAdapter(pageAdapter);
         tabLayout.setupWithViewPager(viewPager);

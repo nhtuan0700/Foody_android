@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Detail.activity_detail_food"></activity>
+        <activity android:name=".Notification.activity_detail_news"></activity>
+        <activity android:name=".Detail.activity_detail_food" />
         <activity
             android:name=".Login.activity_signup"
             android:screenOrientation="portrait"
@@ -36,9 +37,7 @@
         <activity
             android:name=".Login.activity_login"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".Search.activity_search"
             android:screenOrientation="portrait" />

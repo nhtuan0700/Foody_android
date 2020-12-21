@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class fragment_notification extends Fragment {
-    ImageView btn_search;
+    ImageView btnSearch;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     public PageAdapter pageAdapter;
@@ -39,8 +39,8 @@ public class fragment_notification extends Fragment {
     }
 
     public void addControls(View v) {
-        btn_search = v.findViewById(R.id.btn_search);
-        btn_search.setOnClickListener(new View.OnClickListener() {
+        btnSearch = v.findViewById(R.id.btn_search);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_search.class);
