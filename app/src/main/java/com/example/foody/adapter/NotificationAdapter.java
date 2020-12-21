@@ -1,7 +1,6 @@
 package com.example.foody.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foody.R;
-import com.example.foody.activity_detail;
 import com.example.foody.model.Notification;
-import com.example.foody.model.Store;
 
 import java.util.List;
 

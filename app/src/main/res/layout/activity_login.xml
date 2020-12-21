@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgrounnd"
     android:orientation="vertical"
-    tools:context=".activity_login">
+    tools:context=".Login.activity_login">
     <ImageView
         android:background="?android:attr/selectableItemBackground"
         android:focusable="true"
@@ -53,10 +53,11 @@
             android:textSize="15sp"/>
 
         <EditText
+            android:id="@+id/ed_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/body_edittext"
+            android:background="@drawable/edtext_top"
             android:drawableLeft="@drawable/ic_baseline_mail"
             android:drawablePadding="10dp"
             android:padding="8dp"
@@ -64,12 +65,14 @@
             android:textColorHint="#DFD1D1"
             android:textSize="15sp"
             android:textColor="#fff"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:focusable="true"/>
 
         <EditText
+            android:id="@+id/ed_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/body_edittextpass"
+            android:background="@drawable/edtext_bottom"
             android:drawableLeft="@drawable/ic_baseline_lock"
             android:drawablePadding="10dp"
             android:padding="8dp"
@@ -79,10 +82,11 @@
             android:textColorHint="#DFD1D1"
             android:textSize="15sp"
             android:textColor="#fff"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:focusable="true"/>
 
         <Button
-            android:id="@+id/btdangnhap"
+            android:id="@+id/btn_login"
             style="@style/button_login"
             android:text="Đăng Nhập"
             android:textColor="@color/black"
@@ -90,13 +94,13 @@
             android:letterSpacing="0.05"/>
 
         <TextView
-            android:id="@+id/tvqmk"
+            android:id="@+id/tv_signup"
             style="@style/Hyperlink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="Quên mật khẩu"
+            android:text="Đăng ký"
             android:textColor="#DFD1D1"
             android:textSize="15sp"/>
     </LinearLayout>

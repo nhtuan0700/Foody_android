@@ -107,13 +107,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:orientation="vertical">
                     <LinearLayout
                         android:layout_marginVertical="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp">
                         <TextView
                             android:textColor="@color/black"
                             android:textStyle="bold"
@@ -132,56 +132,11 @@
                             android:layout_height="wrap_content">
                         </TextView>
                     </LinearLayout>
-                    <HorizontalScrollView
-                        android:scrollbars="none"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_collection"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:overScrollMode="never">
-                        <LinearLayout
-                            android:id="@+id/linearlayout_horizon"
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:orientation="horizontal">
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:src="@drawable/banner2"
-                                android:layout_width="200dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="10dp"
-                                app:riv_corner_radius="3dp"
-                                android:scaleType="fitXY"/>
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:layout_marginLeft="5dp"
-                                android:src="@drawable/banner3"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                app:riv_corner_radius="3dp"
-                                android:layout_marginRight="10dp"
-                                android:scaleType="fitXY"/>
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:layout_marginLeft="5dp"
-                                android:src="@drawable/banner4"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="10dp"
-                                android:scaleType="fitXY"
-                                app:riv_corner_radius="3dp"/>
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:layout_marginLeft="5dp"
-                                android:src="@drawable/banner5"
-                                android:layout_width="200dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="10dp"
-                                android:scaleType="fitXY"
-                                app:riv_corner_radius="3dp"/>
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:src="@drawable/banner1"
-                                android:layout_width="200dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="10dp"
-                                android:scaleType="fitXY"
-                                app:riv_corner_radius="3dp"/>
-                        </LinearLayout>
-                    </HorizontalScrollView>
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="5dp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"

@@ -1,44 +1,30 @@
 package com.example.foody.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class Store implements Parcelable {
-    private int id;
+public class Store {
+    private String id;
     private String name;
-    private int image;
-    private String description;
     private String address;
+    private String timeWork;
+    private String image;
+    private double pointEval;
+    private String rangePrice;
+    private String idCateStore;
 
-    public Store(int id, String name, int image, String description, String address) {
+    public Store() {
+    }
+
+    public Store(String id, String name, String address, String timeWork, String image, double pointEval, String rangePrice, String idCateStore) {
         this.id = id;
         this.name = name;
-        this.image = image;
-        this.description = description;
         this.address = address;
+        this.timeWork = timeWork;
+        this.image = image;
+        this.pointEval = pointEval;
+        this.rangePrice = rangePrice;
+        this.idCateStore = idCateStore;
     }
 
-    protected Store(Parcel in) {
-        id = in.readInt();
-        name = in.readString();
-        image = in.readInt();
-        description = in.readString();
-        address = in.readString();
-    }
-
-    public static final Creator<Store> CREATOR = new Creator<Store>() {
-        @Override
-        public Store createFromParcel(Parcel in) {
-            return new Store(in);
-        }
-
-        @Override
-        public Store[] newArray(int size) {
-            return new Store[size];
-        }
-    };
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -46,19 +32,31 @@ public class Store implements Parcelable {
         return name;
     }
 
-    public int getImage() {
-        return image;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
     public String getAddress() {
         return address;
     }
 
-    public void setId(int id) {
+    public String getTimeWork() {
+        return timeWork;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public double getPointEval() {
+        return pointEval;
+    }
+
+    public String getRangePrice() {
+        return rangePrice;
+    }
+
+    public String getIdCateStore() {
+        return idCateStore;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -66,29 +64,28 @@ public class Store implements Parcelable {
         this.name = name;
     }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setAddress(String address) {
         this.address = address;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public void setTimeWork(String timeWork) {
+        this.timeWork = timeWork;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeString(name);
-        dest.writeInt(image);
-        dest.writeString(description);
-        dest.writeString(address);
+    public void setImage(String image) {
+        this.image = image;
     }
+
+    public void setPointEval(double pointEval) {
+        this.pointEval = pointEval;
+    }
+
+    public void setRangePrice(String rangePrice) {
+        this.rangePrice = rangePrice;
+    }
+
+    public void setIdCateStore(String idCateStore) {
+        this.idCateStore = idCateStore;
+    }
+
 }

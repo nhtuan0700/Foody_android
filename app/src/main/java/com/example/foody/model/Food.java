@@ -1,18 +1,17 @@
 package com.example.foody.model;
 
-import java.util.ArrayList;
-
 public class Food {
+    private String id;
     private String name;
     private int price;
-    private int image;
-    private int idStore;
+    private String image;
+    private String idStore;
 
-    public Food(String name, int price, int image, int idStore) {
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.idStore = idStore;
+    public Food() {
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -23,12 +22,16 @@ public class Food {
         return price;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public int getIdStore() {
+    public String getIdStore() {
         return idStore;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -39,21 +42,16 @@ public class Food {
         this.price = price;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public void setIdStore(int idStore) {
+    public void setIdStore(String idStore) {
         this.idStore = idStore;
     }
 
-    public String getAddress() {
-        ListStore stores = new ListStore();
-        for (Store store : stores.getListStore()){
-            if(store.getId() == idStore) {
-                return store.getAddress();
-            }
-        }
-        return "";
+    public String getStringPrice() {
+        String str = String.format("%,d", price).replace('.', ',');
+        return str;
     }
 }

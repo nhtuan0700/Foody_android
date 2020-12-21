@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_home"
+    tools:context=".Home.fragment_home"
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
@@ -91,44 +91,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#efe9e9"
-            app:tabIndicatorColor="#0287e0"
-            app:tabIndicatorHeight="3dp"
-            app:tabMode="fixed"
-            app:tabPaddingEnd="0dp"
-            app:tabPaddingStart="0dp"
-            app:tabSelectedTextColor="#0287e0"
-            app:tabTextAppearance="@style/MyCustomTextAppearance">
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Xem gần đây" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Đặt gần đây" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Đã tìm" />
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </androidx.viewpager.widget.ViewPager>
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </LinearLayout>

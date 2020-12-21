@@ -1,26 +1,19 @@
 package com.example.foody.adapter;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-
-import com.example.foody.list_store;
-import com.example.foody.tab_nodata;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PageAdapter extends FragmentStatePagerAdapter {
-    List<Fragment> fragments;
-    private int  numTab;
-    public PageAdapter(@NonNull FragmentManager fm, int numTab) {
+    List<Fragment> fragments = new ArrayList<>();
+    List<String> titles = new ArrayList<>();
+    public PageAdapter(@NonNull FragmentManager fm) {
         super(fm);
-        this.numTab = numTab;
-        this.fragments = new ArrayList<>();
     }
 
     @NonNull
@@ -34,11 +27,18 @@ public class PageAdapter extends FragmentStatePagerAdapter {
         return POSITION_NONE;
     }
 
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return titles.get(position);
+    }
+
     @Override
     public int getCount() {
-        return numTab;
+        return fragments.size();
     }
-    public void addFragment(Fragment fragment){
+    public void addFragment(Fragment fragment, String title){
         fragments.add(fragment);
+        titles.add(title);
     }
 }

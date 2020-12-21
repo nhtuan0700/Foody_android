@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".fragment_notification"
+    tools:context=".Notification.fragment_notification"
     android:weightSum="15">
 
     <LinearLayout
@@ -62,21 +62,7 @@
             app:tabPaddingStart="0dp"
             app:tabPaddingEnd="0dp"
             android:background="#FFF">
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Dịch vụ"/>
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Của tôi"/>
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Tin mới"/>
+
         </com.google.android.material.tabs.TabLayout>
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"

@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:paddingVertical="5dp"
     android:paddingHorizontal="10dp"
-    android:id="@+id/container">
+    android:id="@+id/container"
+    android:background="#fff">
 
     <LinearLayout
         android:gravity="center_vertical"
@@ -18,7 +19,7 @@
             android:layout_width="28dp"
             android:layout_height="28dp"/>
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/tv_name"
             android:layout_marginLeft="10dp"
             android:text="Ví Voucher"
             android:layout_width="wrap_content"

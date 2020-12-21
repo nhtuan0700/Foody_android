@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".fragment_invoice"
+    tools:context=".Invoice.fragment_invoice"
     android:weightSum="15">
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,22 +27,6 @@
             app:tabPaddingEnd="0dp"
             android:background="#D5131B"
             android:padding="5dp">
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Đang Đến"
-                android:layout_margin="15dp"/>
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Lịch sử"/>
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tab3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Đơn nháp"/>
         </com.google.android.material.tabs.TabLayout>
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
