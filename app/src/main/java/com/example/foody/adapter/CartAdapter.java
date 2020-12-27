@@ -95,6 +95,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
                         Cart mCart = childDataSnapshot.getValue(Cart.class);
                         if (mCart.getFood().getId().equals(cart.getFood().getId())) {
                             database.child("Cart").child(childDataSnapshot.getKey()).setValue(null);
+                            Toast.makeText(mContext, "Đã xóa món ăn khỏi giỏ hàng", Toast.LENGTH_SHORT).show();
                             arrCart.remove(cart);
                             notifyDataSetChanged();
                             return;

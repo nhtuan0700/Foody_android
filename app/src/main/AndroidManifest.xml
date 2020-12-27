@@ -13,9 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Detail.activity_cart"></activity>
-        <activity android:name=".Notification.activity_detail_news" />
-        <activity android:name=".Detail.activity_detail_food" />
+        <activity android:name=".Detail.activity_cart"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" ></activity>
+        <activity android:name=".Notification.activity_detail_news"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Detail.activity_detail_food"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Login.activity_signup"
             android:screenOrientation="portrait"
