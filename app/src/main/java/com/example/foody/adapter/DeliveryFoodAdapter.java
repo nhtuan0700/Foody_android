@@ -38,7 +38,7 @@ public class DeliveryFoodAdapter extends RecyclerView.Adapter<DeliveryFoodAdapte
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view = mInflater.inflate(R.layout.item_food2,parent,false);
+        view = mInflater.inflate(R.layout.item_food3,parent,false);
         return new MyViewHolder(view);
     }
 

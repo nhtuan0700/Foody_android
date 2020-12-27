@@ -18,13 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/image"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:riv_corner_radius="3dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/store1"
-                android:scaleType="fitXY"/>
+                app:riv_corner_radius="3dp" />
 
             <TextView
                 android:layout_width="wrap_content"

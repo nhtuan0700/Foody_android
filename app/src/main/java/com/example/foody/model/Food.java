@@ -50,8 +50,8 @@ public class Food {
         this.idStore = idStore;
     }
 
-    public String getStringPrice() {
+    public String getStringPrice(int price) {
         String str = String.format("%,d", price).replace('.', ',');
-        return str;
+        return str + "đ";
     }
 }

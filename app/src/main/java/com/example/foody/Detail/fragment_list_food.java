@@ -30,6 +30,7 @@ public class fragment_list_food extends Fragment {
     ArrayList<Food> arrFood;
     RecyclerView rcv;
     String idStore;
+    MenuFoodAdapter myAdapter;
     public fragment_list_food(String idStore) {
         this.idStore = idStore;
     }
@@ -42,6 +43,7 @@ public class fragment_list_food extends Fragment {
         getListMenu(idStore);
         return v;
     }
+
 
     public void addControls(View v) {
         rcv = v.findViewById(R.id.list_menu);
@@ -81,9 +83,14 @@ public class fragment_list_food extends Fragment {
     }
 
     public void loadListMenu() {
-        MenuFoodAdapter myAdapter1 = new MenuFoodAdapter(getContext(), arrFood);
+
+        if (getContext() instanceof activity_detail_store) {
+            myAdapter = new MenuFoodAdapter(getContext(), R.layout.item_food1, arrFood);
+        } else{
+            myAdapter = new MenuFoodAdapter(getContext(), R.layout.item_food2, arrFood);
+        }
         rcv.setLayoutManager(new LinearLayoutManager(getContext()));
-        rcv.setAdapter(myAdapter1);
+        rcv.setAdapter(myAdapter);
         rcv.setNestedScrollingEnabled(false);
     }
 }

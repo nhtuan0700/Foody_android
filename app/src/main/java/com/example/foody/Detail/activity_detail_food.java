@@ -1,26 +1,22 @@
 package com.example.foody.Detail;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.foody.Home.tab_nodata;
 import com.example.foody.R;
-import com.example.foody.adapter.MenuFoodAdapter;
 import com.example.foody.adapter.PageAdapter;
-import com.example.foody.model.Food;
 import com.example.foody.model.Store;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,23 +25,25 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-
 public class activity_detail_food extends AppCompatActivity {
+    FirebaseUser user;
+    FirebaseAuth mAuth;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     public PageAdapter pageAdapter;
     DatabaseReference database;
-    String id = null;
+    String idStore = null;
     TextView tvTitle, tvName, tvAddress;
     ImageView imageView;
-    ArrayList<Food> arrFood;
     ImageView btnBack;
+    LinearLayout btnCart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_food);
         database = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
         addControls();
         initUI();
         createTabFragment();
@@ -57,6 +55,8 @@ public class activity_detail_food extends AppCompatActivity {
         tvName = findViewById(R.id.tv_store_name);
         tvAddress = findViewById(R.id.tv_address);
         imageView =  findViewById(R.id.image);
+        btnCart = findViewById(R.id.btn_cart);
+
         btnBack = findViewById(R.id.btn_back);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,19 +64,27 @@ public class activity_detail_food extends AppCompatActivity {
                 finish();
             }
         });
+
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), activity_cart.class);
+                intent.putExtra("ID",idStore);
+                startActivity(intent);
+            }
+        });
+
+        if (user != null) {
+            btnCart.setVisibility(View.VISIBLE);
+        } else {
+            btnCart.setVisibility(View.GONE);
+        }
     }
 
-    public void loadDataStore(Store store) {
-        Picasso.get().load(store.getImage()).into(imageView);
-        tvTitle.setText(store.getName());
-        tvName.setText(store.getName());
-        tvAddress.setText(store.getAddress());
-    }
     public void initUI() {
-        arrFood = new ArrayList<>();
         Intent intent = getIntent();
-        id  = intent.getStringExtra("ID");
-        Query query = database.child("Store").orderByChild("id").equalTo(id);
+        idStore  = intent.getStringExtra("ID");
+        Query query = database.child("Store").orderByChild("id").equalTo(idStore);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -84,7 +92,6 @@ public class activity_detail_food extends AppCompatActivity {
                     for (DataSnapshot store : dataSnapshot.getChildren()) {
                         Store mStore = store.getValue(Store.class);
                         loadDataStore(mStore);
-//                        getListMenu(mStore.getId());
                         break;
                     }
                 }
@@ -94,12 +101,19 @@ public class activity_detail_food extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
+            public void loadDataStore(Store store) {
+                Picasso.get().load(store.getImage()).into(imageView);
+                tvTitle.setText(store.getName());
+                tvName.setText(store.getName());
+                tvAddress.setText(store.getAddress());
+            }
         });
     }
 
     public void createTabFragment() {
         pageAdapter = new PageAdapter(getSupportFragmentManager());
-        pageAdapter.addFragment(new fragment_list_food(id), "Giao hàng");
+        pageAdapter.addFragment(new fragment_list_food(idStore), "Giao hàng");
         pageAdapter.addFragment(new tab_nodata(), "Thông tin");
         pageAdapter.addFragment(new tab_nodata(), "Đặt nhiều");
         pageAdapter.addFragment(new tab_nodata(), "Hình ảnh");
